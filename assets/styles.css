@@ -1,0 +1,103 @@
+/* Global */
+
+html {
+  overflow-x: hidden;
+  font-size: 1em;
+  margin: 2rem; }
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin-left: calc(50% + 5rem);
+    margin-right: 8rem;
+    font-size: 16px; }
+    @media screen and (max-width: 1431px) {
+    body {
+      margin-left: calc(50% + 40px);
+      margin-right: 5rem; } }
+    @media screen and (max-width: 800px) {
+    body {
+      margin-left: 0;
+      margin-right: 0rem; } }
+}
+
+#container {
+    width: 90%;
+    margin: auto;
+    background-color: #DEDEDE;
+}
+
+/* Partial */
+
+#float-img {
+    background-size: cover;
+    background-position: -100px;
+    background-repeat: no-repeat;
+    width: calc(50% - 5rem);
+    height: 100vh;
+    top: 0;
+    left: 5rem;
+    position: fixed; }
+@media screen and (max-width: 800px) {
+#float-img {
+    position: relative;
+    left: 0;
+    width: 100%;
+    height: 30vh;
+    margin-bottom: 30px; } }
+
+header nav {
+    padding-top: .5em;
+  margin-top: 0rem;
+  margin-bottom: 4rem; }
+  @media screen and (max-width: 1003px) {
+    nav {
+      text-align: center; } }
+
+  nav ul {
+    margin: 0;
+    padding: 0; }
+
+nav ul li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block; }
+@media screen and (max-width: 480px) {
+nav ul li {
+    display: block; } }
+
+nav ul li a {
+    padding: .5rem 0rem;
+    margin: 0 .5rem;
+    display: block;
+    color: rgba(0, 0, 0, 0.4);
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    border-bottom: 2px solid transparent; }
+
+@media screen and (max-width: 1431px) {
+nav ul li a {
+    margin: 0 .2rem; } }
+@media screen and (max-width: 480px) {
+nav ul li a {
+    border-bottom: 2px solid transparent;
+    padding: .5rem 0rem; } }
+
+nav ul li a:hover {
+    color: rgba(0, 0, 0, 0.7); }
+
+nav ul li:first-child a {
+    margin-left: 0; }
+
+nav ul li.active a {
+    color: rgba(0, 0, 0, 0.7);
+    border-bottom: 2px solid #F96D00; }
+
+@media screen and (max-width: 480px) {
+nav ul li.active a {
+    border-bottom: 2px solid transparent; } }
+}
+
+
