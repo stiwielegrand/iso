@@ -1,16 +1,30 @@
-s<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Inicio - Isolatec</title>
-    <link rel="stylesheet"; href="assets/styles.css?ver=0.4">
+    <title>Contacto - Isolatec</title>
+    <link rel="stylesheet"; href="assets/styles.css?ver=0.6">
     <link href="https://fonts.googleapis.com/css?family=Lora|Open+Sans|Roboto" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Oswald|Source+Sans+Pro" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link href="https://fonts.googleapis.com/css?family=Raleway:900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald|Source+Sans+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gothic+A1" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/cocoen.min.css" />
+    <link rel="stylesheet" href="assets/pure-js-lightbox.min.css" />
+    <script src="assets/cocoen.min.js"></script>
+    <script src="assets/pure-js-lightbox.min.js"></script>
+    <script>var lightbox = new pureJSLightBox();</script>
+    <script>
+			document.addEventListener('DOMContentLoaded', function(){
+				new Cocoen();
+			});
+		</script>
 </head>
 <body>
-  <div id="container">
-    <header class="">
+  <div class="header_banner">Isolatec</div>
+    <header>
+      
         <nav class="header">
         <ul>
             <li><a href="index.html">Inicio</a></li>
@@ -20,23 +34,42 @@ s<!DOCTYPE html>
         </ul>
         </nav>
     </header>
-    <section id="float-img"> <img class="coverpic" src="https://www.acvap.org/wp-content/uploads/2018/04/Architecture-Design-House-Modern.jpg" style="max-width: 100%; 
+  <div id="container">
+    <section id="float-img"> 
+        <div class="cocoen" style="max-width: 100%; 
   height: 100%; 
   overflow: hidden; 
   object-fit: cover;
   position:-100px;">
+        <img src="http://www.wedgewoodhomes.co.uk/images/PlotSmall/Cross-Keys-Plot-1-Banner.jpg" alt="" style=" height: 100%; object-fit: cover;">
+        <img src="http://www.wedgewoodhomes.co.uk/images/gallery/Chestfield-10.jpg" alt="" style=" height: 100%; object-fit: cover;">
+</div>
     </section>
     <section id="content">
-      <h1>
-        Cím tipus 1 verzio
+      <h1 class="contact">
+        Contactanos
       </h1>
-      <h2>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac elit vel justo lacinia sodales. Maecenas sed feugiat felis. Mauris malesuada sodales nibh sit amet aliquam. Sed tempor commodo imperdiet.
-      </h2>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac elit vel justo lacinia sodales. Maecenas sed feugiat felis. Mauris malesuada sodales nibh sit amet aliquam. Sed tempor commodo imperdiet. Nulla facilisi. Pellentesque nibh arcu, vehicula in purus id, gravida vulputate purus. Nullam bibendum justo arcu, nec commodo nisi dapibus nec. Nulla facilisi. Pellentesque quis tempus ex. Vivamus sed tempor metus. Donec suscipit sem sed ex blandit, ac elementum turpis imperdiet. Ut sit amet nisl a libero semper semper. Integer eu facilisis quam. Aenean iaculis nisi ac ante commodo consequat.
-
-Pellentesque vel turpis vitae massa hendrerit imperdiet. Nulla facilisi. Duis eget molestie dui. Nunc non maximus diam. Phasellus interdum sodales tempus. Morbi semper lorem vitae sapien volutpat varius. Pellentesque lobortis orci id pretium semper.
-
+      
+        <P class="contact_p">¿Tienes alguna pregunta? Nos gustaría oir tu opininión. Envianos un mensaje y nos pondremos en contacto contigo lo antes posible.    </P><br><br>
+            
+        <form action="contacto.php">
+            <div class="inputfield">
+            <label>Nombre</label><br>
+        	<input class="effect-16" type="text" placeholder="">
+            <span class="focus-border"></span>
+            </div>
+            <div class="inputfield">
+            <label>Correo electronico</label><br>
+        	<input class="effect-16" type="text" placeholder="">
+            <span class="focus-border"></span>
+            </div>
+            <label>Mensaje</label><br>
+            <div class="inputfield" >
+        	<textarea tabindex="5" style="height:100px;"></textarea>
+            <span class="focus-border"></span>
+            </div>
+            <button type="submit" name="enviar" data-submit="Enviando">Enviar</button>
+        </form>
 
     </section>
     <footer id="footer">
