@@ -24,7 +24,7 @@ body {
 }
 
 #container {
-    margin: 10px 
+    margin: 10px;
     background-color: #DEDEDE;
 }
 
@@ -189,6 +189,22 @@ nav ul li.active a {
   float:left;
     width:46%;
     margin:2%;
+}
+
+.lastelement {
+  margin-bottom: 50px;
+}
+
+@media screen and (max-width:480px) {
+  .content_half {
+    display:block;
+    width: 95%;
+    margin: auto;
+    text-align:center;
+  }
+  .lastelement {
+  margin-bottom: 50px;
+}
 }
 
 .contact {

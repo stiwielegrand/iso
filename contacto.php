@@ -1,3 +1,57 @@
+<? 
+
+$correo = $_POST['correo'];
+$usuario = $_POST['usuario'];
+$mensaje = $_POST['mensaje'];
+$answer ="";
+$success = 0;
+  
+if (isset $correo&&$usuario&&$mensaje) {
+  //Install required first from https://github.com/PHPMailer/PHPMailer
+  use PHPMailer\PHPMailer\PHPMailer;
+  use PHPMailer\PHPMailer\Exception;
+
+  //Load Composer's autoloader
+  require 'vendor/autoload.php';
+
+  $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
+
+  //Server settings
+  $mail->SMTPDebug = 2; //to be taken out after it works// Enable verbose debug output
+  $mail->isSMTP();                                      // Set mailer to use SMTP
+  $mail->Host = 'smtp1.example.com;smtp2.example.com';  // Specify main and backup SMTP servers GET FROM THE OLDER MAIL.PHP
+  $mail->SMTPAuth = true;                               // Enable SMTP authentication
+  $mail->Username = 'user@example.com';                 // SMTP username
+  $mail->Password = 'secret';                           // SMTP password
+  $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+  $mail->Port = 587;                                    // TCP port to connect to
+
+  //Recipients
+  $mail->setFrom($correo, $usuario);
+  $mail->addAddress('info@isolatec.es', 'Isolatec');     // Add a recipient
+
+  //Content
+  $mail->isHTML(true);                                  // Set email format to HTML
+  $mail->Subject = 'Nuevo correo desde isolatec.es';
+  $mail->Body    = $mensaje;
+  $mail->AltBody = strip_tags($mensaje);
+
+  if (!$mail->send()) {
+    $success = 1;
+    $answer = "<h2>Correo enviado, le contactaremos en breves momentos</h2>";
+  }
+  else {
+    $success = 0;
+    $answer = 'Ha ocurrido un error. Lamentamos las molestias. Pongase en contacto en info@isolatec.es. Mailer Error: ', $mail->ErrorInfo;
+  }
+
+  }
+else {
+    $answer = "Falta algún dato";
+    $success = 0;
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,7 +71,7 @@
     <script>var lightbox = new pureJSLightBox();</script>
     <script>
 			document.addEventListener('DOMContentLoaded', function(){
-				new Cocoen();
+				new ocoen();
 			});
 		</script>
 </head>
@@ -49,29 +103,14 @@
       <h1 class="contact">
         Contactanos
       </h1>
-      
-        <P class="contact_p">¿Tienes alguna pregunta? Nos gustaría oir tu opininión. Envianos un mensaje y nos pondremos en contacto contigo lo antes posible.    </P><br><br>
-            
-        <form action="contacto.php">
-            <div class="inputfield">
-            <label>Nombre</label><br>
-        	<input class="effect-16" type="text" placeholder="">
-            <span class="focus-border"></span>
-            </div>
-            <div class="inputfield">
-            <label>Correo electronico</label><br>
-        	<input class="effect-16" type="text" placeholder="">
-            <span class="focus-border"></span>
-            </div>
-            <label>Mensaje</label><br>
-            <div class="inputfield" >
-        	<textarea tabindex="5" style="height:100px;"></textarea>
-            <span class="focus-border"></span>
-            </div>
-            <button type="submit" name="enviar" data-submit="Enviando">Enviar</button>
-        </form>
-
-    </section>
+      <?php if ($success !=1){
+               include "form.html";
+            }
+            else {
+               echo $answer; 
+            }   
+      ?>
+</section>
     <footer id="footer">
     </footer>
 </div>    
